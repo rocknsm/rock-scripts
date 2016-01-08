@@ -28,5 +28,5 @@ that you'd like to use that is not in there, you can load it directly:
 TODO
 ----
 
-[ ] Cleanup scripts and add common header
-[ ] Create skeleton script file as a starter
+- [ ] Cleanup scripts and add common header
+- [ ] Create skeleton script file as a starter
