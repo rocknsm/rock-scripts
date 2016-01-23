@@ -4,4 +4,4 @@
 
 
 # Load integration with Snort on ROCK
-@load frameworks/files/unified2-integration
+@load ./frameworks/files/unified2-integration
