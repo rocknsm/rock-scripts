@@ -1,3 +1,7 @@
+# Copyright (C) 2016, Missouri Cyber Team
+# All Rights Reserved
+# See the file "LICENSE" in the main distribution directory for details
+
 ##! Add geo_location for the originator and responder of a connection
 ##! to the connection logs.
 

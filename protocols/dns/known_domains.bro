@@ -1,4 +1,11 @@
-module CyberDev;
+# Copyright (C) 2016, Missouri Cyber Team
+# All Rights Reserved
+# See the file "LICENSE" in the main distribution directory for details
+
+# NOTE: On a busy network, this may consume a lot of memory. Revisit
+# when Broker is efficient enough to handle this.
+
+module MOCYBER;
 
 export {
 ## The known-hosts logging stream identifier.
@@ -27,8 +34,8 @@ export {
 
 event bro_init()
 {
-  Log::create_stream(CyberDev::UNIQDNS_LOG, [$columns=Info, $ev=log_known_domains, $path="known_domains"]);
-  local f = Log::get_filter(CyberDev::UNIQDNS_LOG, "default");
+  Log::create_stream(MOCYBER::UNIQDNS_LOG, [$columns=Info, $ev=log_known_domains, $path="known_domains"]);
+  local f = Log::get_filter(MOCYBER::UNIQDNS_LOG, "default");
   #f$interv = 15 min;
   Log::add_filter(CyberDev::UNIQDNS_LOG, f);
 }
@@ -40,7 +47,6 @@ event dns_query_reply(c: connection, msg: dns_msg, query: string, qtype: count, 
   if(query !in known_domains)
   {
     add known_domains[query];
-    Log::write( CyberDev::UNIQDNS_LOG,[$ts=network_time(),$domain=query] );
+    Log::write( MOCYBER::UNIQDNS_LOG,[$ts=network_time(),$domain=query] );
   }
 }
-
