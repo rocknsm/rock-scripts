@@ -2,6 +2,7 @@
 # All Rights Reserved
 # See the file "LICENSE" in the main distribution directory for details
 
+@load ./rock
 
-# Load integration with Snort on ROCK
-@load ./frameworks/files/unified2-integration
+
+
