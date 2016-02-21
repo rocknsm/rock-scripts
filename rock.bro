@@ -13,3 +13,8 @@ export {
 
 # Load integration with FSF
 @load ./frameworks/files/extract2fsf
+
+# Load file extraction
+@load ./frameworks/files/extraction
+redef FileExtract::prefix = "/data/bro/logs/extract_files/";
+redef FileExtract::default_limit = 1048576000;
