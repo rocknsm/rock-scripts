@@ -25,3 +25,6 @@ redef FileExtract::default_limit = 1048576000;
 redef KafkaLogger::topic_name = "bro_raw";
 redef KafkaLogger::sensor_name = ROCK::sensor_id;
 
+# Add GeoIP info to conn log
+@load ./misc/conn-add-geoip
+
