@@ -4,7 +4,7 @@
 
 redef Kafka::topic_name = "bro_raw";
 redef Kafka::json_timestamps = JSON::TS_ISO8601;
-redef Kafka::tag_json = T;
+redef Kafka::tag_json = F;
 
 ## Setup event extension to include sensor and probe name
 type Extension: record {
