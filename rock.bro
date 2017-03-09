@@ -28,6 +28,5 @@ redef KafkaLogger::sensor_name = ROCK::sensor_id;
 # Add GeoIP info to conn log
 @load ./misc/conn-add-geoip
 
-# Add worker information to conn log
-@load ./misc/conn-add-worker
-
+# Add sensor and log meta information to each log
+@load ./frameworks/logging/extension
