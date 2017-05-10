@@ -8,6 +8,9 @@ export {
   const sensor_id = "sensor001-001" &redef;
 }
 
+# Add empty Intel framework database
+@load ./frameworks/intel
+
 # Load integration with Snort on ROCK
 @load ./frameworks/files/unified2-integration
 
@@ -18,6 +21,7 @@ export {
 @load ./frameworks/files/extraction
 redef FileExtract::prefix = "/data/bro/logs/extract_files/";
 redef FileExtract::default_limit = 1048576000;
+
 
 # Add GeoIP info to conn log
 @load ./misc/conn-add-geoip
