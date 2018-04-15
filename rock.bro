@@ -18,7 +18,6 @@ export {
   const sensor_id = gethostname() &redef;
 }
 
-
 #=== Bro built-ins ===================================
 
 # Collect on SMB protocol
@@ -31,6 +30,8 @@ export {
 @load policy/protocols/conn/mac-logging
 
 #== ROCK specific scripts ============================
+# Add empty Intel framework database
+@load ./frameworks/intel
 
 # Load integration with FSF
 @load ./frameworks/files/extract2fsf
