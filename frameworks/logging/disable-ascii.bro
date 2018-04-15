@@ -1,4 +1,4 @@
-# Copyright (C) 2016-2018 RockNSM
+# Copyright (C) 2018 RockNSM
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,26 +11,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-module Kafka;
 
-redef Kafka::topic_name = "bro-raw";
-redef Kafka::json_timestamps = JSON::TS_ISO8601;
-redef Kafka::tag_json = F;
-
-# Enable bro logging to kafka for all logs
+# Disable bro logging to filesystem for all logs
 event bro_init() &priority=-5
 {
     for (stream_id in Log::active_streams)
     {
-        if (|Kafka::logs_to_send| == 0 || stream_id in Kafka::logs_to_send)
-        {
-            local filter: Log::Filter = [
-                $name = fmt("kafka-%s", stream_id),
-                $writer = Log::WRITER_KAFKAWRITER,
-                $config = table(["stream_id"] = fmt("%s", stream_id))
-            ];
-
-            Log::add_filter(stream_id, filter);
-        }
+        Log::remove_filter(stream_id, "default");
     }
 }

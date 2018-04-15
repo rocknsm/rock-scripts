@@ -1,11 +1,21 @@
-# Copyright (C) 2016, Missouri Cyber Team
-# All Rights Reserved
-# See the file "LICENSE" in the main distribution directory for details
+# Copyright (C) 2016-2018 RockNSM
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 # NOTE: On a busy network, this may consume a lot of memory. Revisit
 # when Broker is efficient enough to handle this.
 
-module MOCYBER;
+module RockNSM;
 
 export {
 ## The known-hosts logging stream identifier.
@@ -34,10 +44,10 @@ export {
 
 event bro_init()
 {
-  Log::create_stream(MOCYBER::UNIQDNS_LOG, [$columns=Info, $ev=log_known_domains, $path="known_domains"]);
-  local f = Log::get_filter(MOCYBER::UNIQDNS_LOG, "default");
+  Log::create_stream(RockNSM::UNIQDNS_LOG, [$columns=Info, $ev=log_known_domains, $path="known_domains"]);
+  local f = Log::get_filter(RockNSM::UNIQDNS_LOG, "default");
   #f$interv = 15 min;
-  Log::add_filter(CyberDev::UNIQDNS_LOG, f);
+  Log::add_filter(RockNSM::UNIQDNS_LOG, f);
 }
 
 event dns_query_reply(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count)
@@ -47,6 +57,6 @@ event dns_query_reply(c: connection, msg: dns_msg, query: string, qtype: count, 
   if(query !in known_domains)
   {
     add known_domains[query];
-    Log::write( MOCYBER::UNIQDNS_LOG,[$ts=network_time(),$domain=query] );
+    Log::write( RockNSM::UNIQDNS_LOG,[$ts=network_time(),$domain=query] );
   }
 }
