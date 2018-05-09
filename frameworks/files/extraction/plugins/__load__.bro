@@ -1,5 +1,6 @@
 #@load ./extract-all-files.bro
 @load ./extract-common-exploit-types.bro
+@load ./extract-executable-types.bro
 #@load ./extract-java.bro
 #@load ./extract-ms-office.bro
 #@load ./extract-pdf.bro
