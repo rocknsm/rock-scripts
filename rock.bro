@@ -44,6 +44,10 @@ redef FileExtract::default_limit = 1048576000;
 # Add sensor and log meta information to each log
 @load ./frameworks/logging/extension
 
+#== 3rd Party Scripts =================================
+# Add Salesforce's JA3 SSL fingerprinting
+@load ./misc/ja3
+
 ### Sensor specific scripts ######################
 
 # Configure AF_PACKET, if in use
