@@ -64,7 +64,7 @@ event ssl_extension(c: connection, is_orig: bool, code: count, val: string)
 {
 if ( ! c?$tlsfp )
     c$tlsfp=TLSFPStorage();
-    if ( is_orig = T ) {
+    if ( is_orig == T ) {
         if ( code in grease ) {
             next;
         }
@@ -81,7 +81,7 @@ event ssl_extension_ec_point_formats(c: connection, is_orig: bool, point_formats
 {
 if ( !c?$tlsfp )
     c$tlsfp=TLSFPStorage();
-    if ( is_orig = T ) {
+    if ( is_orig == T ) {
         for ( i in point_formats ) {
             if ( point_formats[i] in grease ) {
             next;
@@ -100,7 +100,7 @@ event ssl_extension_elliptic_curves(c: connection, is_orig: bool, curves: index_
 {
     if ( !c?$tlsfp )
     c$tlsfp=TLSFPStorage();
-    if ( is_orig = T  ) {
+    if ( is_orig == T  ) {
         for ( i in curves ) {
             if ( curves[i] in grease ) {
             next;
@@ -115,7 +115,11 @@ event ssl_extension_elliptic_curves(c: connection, is_orig: bool, curves: index_
     }
 }
 
+@if ( Version::at_least("2.6") || ( Version::number == 20500 && Version::info$commit >= 944 ) )
+event ssl_client_hello(c: connection, version: count, record_version: count, possible_ts: time, client_random: string, session_id: string, ciphers: index_vec, comp_methods: index_vec) &priority=1
+@else
 event ssl_client_hello(c: connection, version: count, possible_ts: time, client_random: string, session_id: string, ciphers: index_vec) &priority=1
+@endif
 {
     if ( !c?$tlsfp )
     c$tlsfp=TLSFPStorage();
