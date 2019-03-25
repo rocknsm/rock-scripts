@@ -29,6 +29,9 @@ export {
 # Log MAC addresses
 @load policy/protocols/conn/mac-logging
 
+# Log (All) Client and Server HTTP Headers
+@load policy/protocols/http/header-names.bro
+
 #== ROCK specific scripts ============================
 # Add empty Intel framework database
 @load ./frameworks/intel
