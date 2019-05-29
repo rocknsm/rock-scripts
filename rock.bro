@@ -21,7 +21,7 @@ export {
 #=== Bro built-ins ===================================
 
 # Collect on SMB protocol
-@load policy/protocols/smb
+@load base/protocols/smb
 
 # Enable VLAN Logging
 @load policy/protocols/conn/vlan-logging
