@@ -20,9 +20,6 @@ export {
 
 #=== Bro built-ins ===================================
 
-# Collect on SMB protocol
-@load base/protocols/smb
-
 # Enable VLAN Logging
 @load policy/protocols/conn/vlan-logging
 
@@ -30,7 +27,7 @@ export {
 @load policy/protocols/conn/mac-logging
 
 # Log (All) Client and Server HTTP Headers
-@load policy/protocols/http/header-names.bro
+@load policy/protocols/http/header-names
 
 #== ROCK specific scripts ============================
 # Add empty Intel framework database
@@ -46,6 +43,24 @@ redef FileExtract::default_limit = 1048576000;
 
 # Add sensor and log meta information to each log
 @load ./frameworks/logging/extension
+
+# Log all orig and resp cert hashes in ssl log
+@load ./protocols/ssl/ssl-add-cert-hash
+
+# Enable pop3 logging
+@load ./protocols/pop3
+
+# Notice on all recently created certs
+# @load ./protocols/ssl/new-certs
+
+# Generate log of all unique DNS queries with answers
+# @load ./protocols/dns/known_domains
+
+# Generate log of all URLs seen in an SMTP body
+# @load ./protocols/smtp/smtp-url
+
+# Generate log of local systems using unencrypted protocols
+# @load ./frameworks/compliance/detect-insecure-protos
 
 #== 3rd Party Scripts =================================
 # Add Salesforce's JA3 SSL fingerprinting

@@ -1,4 +1,4 @@
-# Copyright (C) 2016, Missouri Cyber Team
+# Copyright (C) 2016-2019, RockNSM Foundation
 # All Rights Reserved
 # See the file "LICENSE" in the main distribution directory for details
 #
