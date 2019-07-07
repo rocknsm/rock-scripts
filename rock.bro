@@ -51,6 +51,9 @@ redef FileExtract::default_limit = 1048576000;
 # Add Salesforce's JA3 SSL fingerprinting
 @load ./misc/ja3
 
+# Add Salesforce's HASSH SSH fingerprinting
+@load ./misc/HASSH
+
 ### Sensor specific scripts ######################
 
 # Configure AF_PACKET, if in use
