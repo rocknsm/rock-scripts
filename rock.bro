@@ -67,7 +67,7 @@ redef FileExtract::default_limit = 1048576000;
 @load ./misc/ja3
 
 # Add Salesforce's HASSH SSH fingerprinting
-@load ./misc/HASSH
+@load ./misc/hassh
 
 ### Sensor specific scripts ######################
 
