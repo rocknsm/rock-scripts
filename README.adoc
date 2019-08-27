@@ -8,7 +8,7 @@ go to your `site` directory and check it out to a named item.
 [source,bash]
 ----
 cd /opt/bro/share/bro/site
-git clone https://github.com/mocyber/bro-scripts.git rock
+git clone https://github.com/rocknsm/bro-scripts.git rock
 ----
 
 Then, in your `local.bro` add the following at the bottom:
