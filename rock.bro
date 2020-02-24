@@ -38,7 +38,7 @@ export {
 
 # Load file extraction
 @load ./frameworks/files/extraction
-redef FileExtract::prefix = "/data/bro/logs/extract_files/";
+redef FileExtract::prefix = "/data/zeek/logs/extract_files/";
 redef FileExtract::default_limit = 1048576000;
 
 # Add sensor and log meta information to each log
