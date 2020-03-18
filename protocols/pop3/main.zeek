@@ -13,7 +13,7 @@
 # limitations under the License.
 
 ##! Basic POP3 analyzer
-# From here: https://github.com/albert-magyar/bro/blob/topic/pop3/scripts/base/protocols/pop3/main.bro
+# From here: https://github.com/albert-magyar/bro/blob/topic/pop3/scripts/base/protocols/pop3/main.zeek
 
 @load base/utils/numbers
 @load base/utils/files

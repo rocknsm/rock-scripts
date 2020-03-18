@@ -1,0 +1,10 @@
+#@load ./extract-all-files.zeek
+@load ./extract-common-exploit-types.zeek
+@load ./extract-executable-types.zeek
+#@load ./extract-java.zeek
+#@load ./extract-ms-office.zeek
+#@load ./extract-pdf.zeek
+#@load ./extract-pe.zeek
+#@load ./store-files-by-md5.zeek
+#@load ./store-files-by-sha1.zeek 
+#@load ./store-files-by-sha256.zeek 

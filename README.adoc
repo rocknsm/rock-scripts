@@ -11,7 +11,7 @@ cd /opt/bro/share/bro/site
 git clone https://github.com/mocyber/bro-scripts.git rock
 ----
 
-Then, in your `local.bro` add the following at the bottom:
+Then, in your `local.zeek` add the following at the bottom:
 
 [source,bro]
 ----
@@ -19,7 +19,7 @@ Then, in your `local.bro` add the following at the bottom:
 @load rock
 ----
 
-This loads all the scripts defined in `__load__.bro`. If there's a script
+This loads all the scripts defined in `__load__.zeek`. If there's a script
 that you'd like to use that is not in there, you can load it directly:
 
 [source,bro]

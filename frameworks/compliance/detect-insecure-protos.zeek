@@ -2,7 +2,7 @@
 # All Rights Reserved
 # See the file "LICENSE" in the main distribution directory for details
 #
-# filename: detect-insecure-protos.bro
+# filename: detect-insecure-protos.zeek
 #
 # This policy provides a framework to detect non-compliant configurations that
 # provide services using insecure network protocols. You may whitelist specific

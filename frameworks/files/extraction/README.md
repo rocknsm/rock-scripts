@@ -12,7 +12,7 @@ Installation
 
 		cd <prefix>/share/bro/site/
 		git clone git://github.com/hosom/bro-file-extraction file-extraction
-		echo "@load file-extraction" >> local.bro
+		echo "@load file-extraction" >> local.zeek
 
 With the above installation, the module will not extract any files. In addition to the changes above, code must be written to hook FileExtraction::extract. For examples of this, look at the scripts in the plugins directory.
 
@@ -41,51 +41,51 @@ Other than the extracted files, this module will generate no output.
 Plugins
 ===============================
 
-extract-all-files.bro
+extract-all-files.zeek
 -------------
 
 Attaches the extract files analyzer to every file that has a mime_type detected.
 
-extract-java.bro
+extract-java.zeek
 -------------
 
 Attaches the extract files analyzer to every JNLP and Java Archive file detected.
 
-extract-pe.bro
+extract-pe.zeek
 -------------
 
 Attaches the extract files analyzer to every PE file detected.
 
-extract-ms-office.bro
+extract-ms-office.zeek
 -------------
 
 Attaches the extract files analyzer to every ms office file detected.
 
-extract-pe.bro
+extract-pe.zeek
 -------------
 
 Attaches the extract files analyzer to every PDF file detected.
 
-extract-common-exploit-types.bro
+extract-common-exploit-types.zeek
 -------------
 
 Loads the following plugins:
-- extract-java.bro
-- extract-pe.bro
-- extract-ms-office.bro
-- extract-pdf.bro
+- extract-java.zeek
+- extract-pe.zeek
+- extract-ms-office.zeek
+- extract-pdf.zeek
 
-store-files-by-md5.bro
+store-files-by-md5.zeek
 -------------
 
 Uses file_state_remove to rename extracted files based on the md5 checksum whenever it is available.
 
-store-files-by-sha1.bro
+store-files-by-sha1.zeek
 -------------
 
 Uses file_state_remove to rename extracted files based on the sha1 checksum whenever it is available.
 
-store-files-by-sha256.bro
+store-files-by-sha256.zeek
 -------------
 
 Uses file_state_remove to rename extracted files based on the sha256 checksum whenever it is available.
