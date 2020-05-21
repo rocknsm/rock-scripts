@@ -1,0 +1,10 @@
+#@load ./extract-all-files
+@load ./extract-common-exploit-types
+@load ./extract-executable-types
+#@load ./extract-java
+#@load ./extract-ms-office
+#@load ./extract-pdf
+#@load ./extract-pe
+#@load ./store-files-by-md5
+#@load ./store-files-by-sha1
+#@load ./store-files-by-sha256
