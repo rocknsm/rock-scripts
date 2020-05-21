@@ -69,6 +69,9 @@ redef FileExtract::default_limit = 1048576000;
 # Add Salesforce's HASSH SSH fingerprinting
 @load ./misc/hassh
 
+# Add community_id to all network logs
+@load ./plugins/community_id
+
 ### Sensor specific scripts ######################
 
 # Configure AF_PACKET, if in use
