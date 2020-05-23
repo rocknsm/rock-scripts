@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Disable bro logging to filesystem for all logs
-event bro_init() &priority=-5
+event zeek_init() &priority=-5
 {
     for (stream_id in Log::active_streams)
     {

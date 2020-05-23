@@ -71,7 +71,7 @@ redef record connection += {
 
 const ports = { 110/tcp };
 redef likely_server_ports += { ports };
-event bro_init() &priority=5 {
+event zeek_init() &priority=5 {
     Log::create_stream(POP3::LOG, [$columns=Info, $ev=log_pop3]);
     Analyzer::register_for_ports(Analyzer::ANALYZER_POP3, ports);
 }

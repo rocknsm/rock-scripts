@@ -79,7 +79,7 @@ redef record connection += {
         smtp_url: Info &optional;
 };
 
-event bro_init() &priority=5
+event zeek_init() &priority=5
         {
         # initialize the bloomfilter
         mail_links_bf = bloomfilter_basic_init(0.00000001, 10000000, "SMTP_URL");

@@ -38,7 +38,7 @@ redef record SSL::Info += {
 
 
 const sep = "-";
-event bro_init() {
+event zeek_init() {
     Log::create_stream(JA3_Server::LOG,[$columns=JA3Sstorage, $path="ja3sfp"]);
 }
 

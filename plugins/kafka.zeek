@@ -18,7 +18,7 @@ redef Kafka::json_timestamps = JSON::TS_ISO8601;
 redef Kafka::tag_json = F;
 
 # Enable bro logging to kafka for all logs
-event bro_init() &priority=-5
+event zeek_init() &priority=-5
 {
     for (stream_id in Log::active_streams)
     {

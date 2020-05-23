@@ -65,7 +65,7 @@ export {
   const alarm_source = set("bro") &redef;
 }
 
-event bro_init()
+event zeek_init()
 {
   # Add any initalization logic here
 }

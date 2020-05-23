@@ -56,7 +56,7 @@ const grease: set[int] = {
     64250
 };
 const sep = "-";
-event bro_init() {
+event zeek_init() {
     Log::create_stream(JA3::LOG,[$columns=TLSFPStorage, $path="tlsfp"]);
 }
 

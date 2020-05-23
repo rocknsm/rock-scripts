@@ -42,7 +42,7 @@ export {
   global log_known_domains: event(rec: Info);
 }
 
-event bro_init()
+event zeek_init()
 {
   Log::create_stream(RockNSM::UNIQDNS_LOG, [$columns=Info, $ev=log_known_domains, $path="known_domains"]);
   local f = Log::get_filter(RockNSM::UNIQDNS_LOG, "default");

@@ -121,7 +121,7 @@ hook Notice::policy(n: Notice::Info)
     add n$actions[SCOT::ACTION_LOG];
   }
 
-event bro_init()
+event zeek_init()
 {
   local message = fmt("bad things happened");
 
