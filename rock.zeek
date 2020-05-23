@@ -62,6 +62,10 @@ redef FileExtract::default_limit = 1048576000;
 # Generate log of local systems using unencrypted protocols
 # @load ./frameworks/compliance/detect-insecure-protos
 
+# Load DoD root certs for WCF and general purpose to allow
+# Zeek to validate them, which should clean up your notice log
+# @load ./protocols/ssl/dod-ca-list.zeek
+
 #== 3rd Party Scripts =================================
 # Add Salesforce's JA3 SSL fingerprinting
 @load ./misc/ja3
