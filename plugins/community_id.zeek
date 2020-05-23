@@ -1,1 +1,1 @@
-@load ./publish_community-id
+@load ./publish-community_id
