@@ -13,11 +13,11 @@
 # limitations under the License.
 module Kafka;
 
-redef Kafka::topic_name = "bro-raw";
+redef Kafka::topic_name = "zeek-raw";
 redef Kafka::json_timestamps = JSON::TS_ISO8601;
 redef Kafka::tag_json = F;
 
-# Enable bro logging to kafka for all logs
+# Enable zeek (bro) logging to kafka for all logs
 event zeek_init() &priority=-5
 {
     for (stream_id in Log::active_streams)
