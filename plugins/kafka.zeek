@@ -13,7 +13,7 @@
 # limitations under the License.
 module Kafka;
 
-redef Kafka::topic_name = "bro-raw";
+redef Kafka::topic_name = "zeek-raw";
 redef Kafka::json_timestamps = JSON::TS_ISO8601;
 redef Kafka::tag_json = F;
 
