@@ -34,7 +34,7 @@ export {
 @load ./frameworks/intel
 
 # Load integration with FSF
-@load ./frameworks/files/extract2fsf
+#@load ./frameworks/files/extract2fsf
 
 # Load file extraction
 @load ./frameworks/files/extraction
@@ -45,7 +45,7 @@ redef FileExtract::default_limit = 1048576000;
 @load ./frameworks/logging/extension
 
 # Log all orig and resp cert hashes in ssl log
-@load ./protocols/ssl/ssl-add-cert-hash
+#@load ./protocols/ssl/ssl-add-cert-hash
 
 # Enable pop3 logging
 @load ./protocols/pop3
@@ -74,9 +74,9 @@ redef FileExtract::default_limit = 1048576000;
 @load ./misc/hassh
 
 # Add community_id to all network logs
-@load ./plugins/community_id
+#@load ./plugins/community_id
 
 ### Sensor specific scripts ######################
 
 # Configure AF_PACKET, if in use
-@load ./plugins/afpacket
+#@load ./plugins/afpacket
